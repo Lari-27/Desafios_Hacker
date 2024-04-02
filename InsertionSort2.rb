@@ -18,29 +18,19 @@ require 'stringio'
 #  2. INTEGER_ARRAY arr
 #
 
-def insertionSort2(n, arr) #'n - tamanho da lista' / 'arr - lista a ser classificada'
-    # Write your code here
-# Começa a iteração a partir do segundo número da lista, pois o primeiro número já está considerado "ordenado". 
-#O loop percorre todos os números do segundo ao último.
+def insertionSort2(n, arr)
   for i in 1..n-1
-  #Armazena o valor do número atual (arr[i]) em key, 
-  # pois este é o número que será inserido na posição correta.
     key = arr[i] 
-    j = i - 1 #Inicia j como o índice do número à esquerda de key.
-    # enquanto j está dentro dos limites do array, e o número atual (arr[i]) é maior que key
+    j = i - 1 
   while j >= 0 && arr[j] > key
-    # Move o número atual uma posição para a direita, para abrir espaço para a inserção de key.
     arr[j + 1] = arr[j]
-    # Move para o próximo elemento à esquerda.
     j -= 1
   end
-  arr[j + 1] = key #insere key na posição correta 
-    puts arr.join(' ') #Imprime o array após cada iteração
+  arr[j + 1] = key 
   end 
+  puts arr.join(' ') 
 end
 
-n = gets.strip.to_i
-
-arr = gets.rstrip.split.map(&:to_i)
-
-insertionSort2 n, arr
+arr = [2, 1, 5, 4, 3]
+n = 5
+insertionSort2(n, arr)
