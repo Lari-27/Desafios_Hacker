@@ -14,10 +14,9 @@ require 'stringio'
 
 
 def camelcase(s)
-  # Write your code here
-  count = 1 #inicia o contado com 1, a primeira palavra começa com letra minuscula. 
-  s.each_char do |char| #passa por cada caractere da string 
-    count += 1 if char == char.upcase #verifica se o caract atual é uma letra maiuscula, se for incrementa ao contador
+  count = 1
+  s.each_char do |char| 
+    count += 1 if char == char.upcase 
   end
         
   return count
