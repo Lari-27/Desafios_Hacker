@@ -18,12 +18,12 @@ def minimumNumber(n, password)
     upper_case = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     special_characters = "!@#$%^&*()-+"
     
-    missing_types = 0
+    missing_types = 0 #variavel que armazena quantos tipos diferentes de caracteres estão ausentes na senha.
     missing_types += 1 unless password.chars.any? { |char| numbers.include?(char) }
     missing_types += 1 unless password.chars.any? { |char| lower_case.include?(char) }
     missing_types += 1 unless password.chars.any? { |char| upper_case.include?(char) }
     missing_types += 1 unless password.chars.any? { |char| special_characters.include?(char) }
-    missing_length = [0, 6 - n].max
+    missing_length = [0, 6 - n].max #Calcula-se o número mínimo de caracteres que precisam ser adicionados à senha para que ela tenha pelo menos 6 caracteres
 
     [missing_types, missing_length].max
 end
